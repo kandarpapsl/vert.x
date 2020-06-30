@@ -216,6 +216,7 @@
       <groupId>io.netty</groupId>
       <artifactId>netty-tcnative-boringssl-static</artifactId>
       <scope>test</scope>
+      <version>2.0.32.Final-SNAPSHOT</version>
       <classifier>linux-ppcle_64</classifier>
     </dependency>
 

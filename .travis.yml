@@ -5,9 +5,22 @@ branches:
   - master
   - /^\d+\.\d+$/
 addon:
-  apt: maven
+  apt:
+    - maven
+    - openssl
+    - ninja-build
+    - golang
+    - libapr1
+    - libapr1-dev
+    - libssl-dev
+    - cmake
+    - autoconf
+    - libtool
   
 before_install:
+  - ./Install_hawtjni.sh
+  - ./Install_netty_tcnative.sh
+  - ./Install_ninja.sh
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
 cache:
   directories:
