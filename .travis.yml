@@ -1,10 +1,12 @@
 language: java
+os: linux
+dist: xenial
 arch: ppc64le
 branches:
   only:
   - master
   - /^\d+\.\d+$/
-addon:
+addons:
   apt:
     - openssl
     - ninja-build
@@ -21,7 +23,7 @@ before_install:
   - source /etc/profile.d/maven.sh
   - ./Install_hawtjni.sh >/dev/null 2>&1
   - ./Install_netty_tcnative.sh >/dev/null 2>&1
-  - ./Install_netty.sh >/tmp/nettyLog.txt 2>&1
+  - travis_wait 30 ./Install_netty.sh >/tmp/nettyLog.txt 2>&1
   - tail -100 /tmp/nettyLog.txt
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
 cache:
