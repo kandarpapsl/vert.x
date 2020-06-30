@@ -2,4 +2,4 @@
 cd $HOME
 git clone https://github.com/fusesource/hawtjni
 cd hawtjni
-mvn install
+mvn deploy -DskipTests
