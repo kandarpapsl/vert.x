@@ -17,10 +17,10 @@ addon:
     - libtool
   
 before_install:
-  - sudo ./Setup_maven.sh
+  - sudo ./Setup_maven.sh >/dev/null 2>&1
   - source /etc/profile.d/maven.sh
-  - ./Install_hawtjni.sh
-  - ./Install_netty_tcnative.sh
+  - ./Install_hawtjni.sh >/dev/null 2>&1
+  - ./Install_netty_tcnative.sh >/dev/null 2>&1
   - ./Install_netty.sh
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
 cache:
