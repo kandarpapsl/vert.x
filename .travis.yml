@@ -21,11 +21,14 @@ addons:
 before_install:
   - sudo ./Setup_maven.sh >/dev/null 2>&1
   - source /etc/profile.d/maven.sh
-  - ./Install_hawtjni.sh >/dev/null 2>&1
-  - ./Install_netty_tcnative.sh >/dev/null 2>&1
+  - ./Install_hawtjni.sh >/tmp/hqwtjni_log.log 2>&1
+  - tail -50 /tmp/hqwtjni_log.log
+  - travis_wait 30./Install_netty_tcnative.sh >/tmp/tcnative.log 2>&1
+  - tail -50 /tmp/tcnative.log
+  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
+after_install:
   - travis_wait 30 ./Install_netty.sh >/tmp/nettyLog.txt 2>&1
   - tail -100 /tmp/nettyLog.txt
-  - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
 cache:
   directories:
     - $HOME/.m2
