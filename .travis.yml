@@ -27,10 +27,12 @@ before_install:
   - ./Install_netty_tcnative.sh >/tmp/tcnative.log 2>&1
   - tail -50 /tmp/tcnative.log
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
-after_install:
+
+before_script:
   - "travis_wait 30 sleep 1800&"
   - ./Install_netty.sh >/tmp/nettyLog.txt 2>&1
   - tail -100 /tmp/nettyLog.txt
+
 cache:
   directories:
     - $HOME/.m2
