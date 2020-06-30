@@ -17,7 +17,7 @@ addon:
     - libtool
   
 before_install:
-  - ./Setup_maven.sh
+  - sudo ./Setup_maven.sh
   - source /etc/profile.d/maven.sh
   - ./Install_hawtjni.sh
   - ./Install_netty_tcnative.sh
