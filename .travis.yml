@@ -21,7 +21,7 @@ before_install:
   - source /etc/profile.d/maven.sh
   - ./Install_hawtjni.sh
   - ./Install_netty_tcnative.sh
-  - ./Install_ninja.sh
+  - ./Install_netty.sh
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
 cache:
   directories:
