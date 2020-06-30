@@ -5,7 +5,7 @@ branches:
   - master
   - /^\d+\.\d+$/
 addon:
-  apt: mvn
+  apt: maven
   
 before_install:
   - wget https://github.com/sormuras/bach/raw/master/install-jdk.sh
