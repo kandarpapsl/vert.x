@@ -43,7 +43,7 @@ jobs:
     - stage: test
       name: "OpenJDK 8"
       jdk: openjdk8
-      script: mvn -q clean verify -B
+      script: mvn -q clean install
       install: . ./install-jdk.sh --url "https://api.adoptopenjdk.net/v2/binary/releases/openjdk8?openjdk_impl=hotspot&os=linux&type=jdk&release=latest&heap_size=normal&arch=ppc64le"
 notifications:
   email:
