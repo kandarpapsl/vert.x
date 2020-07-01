@@ -9,4 +9,4 @@ fi
 
 sed -i '/<libresslVersion>*/c\    <libresslVersion>3.2.0</libresslVersion>' pom.xml
 
-mvn clean install
+mvn clean install -Dmaven.test.skip=true
