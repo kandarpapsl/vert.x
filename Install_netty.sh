@@ -9,4 +9,4 @@ then
    sed -i -e "s/ RSA keySize\s*<\s*[0-9]*,//" /etc/crypto-policies/back-ends/java.config
 fi
 
-mvn clean install
+mvn clean -Dmaven.test.skip=true install 
